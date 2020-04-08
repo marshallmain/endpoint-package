@@ -87,7 +87,7 @@ fields:
               The status of the malware configuration
             type: keyword
             example: failure
-          - name: concerned_actions
+          - name: concerned_actions #TODO we can define each action
             description: >
               The actions taken by endpoint to apply the configurations for malware
             type: keyword
@@ -103,7 +103,7 @@ fields:
               The status of the eventing configuration
             type: keyword
             example: failure
-          - name: concerned_actions
+          - name: concerned_actions #TODO we can define each action
             description: >
               The actions taken by endpoint to apply the configurations for eventing
             type: keyword
@@ -129,7 +129,7 @@ fields:
             type: text
             example: version not verified
 
-        #TODO add more actions
+        #TODO add more actions, we can define each one
 
 
 - name: agent

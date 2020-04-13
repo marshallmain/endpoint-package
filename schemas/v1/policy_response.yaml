@@ -87,71 +87,13 @@ fields:
               The status of the malware configuration
             type: keyword
             example: failure
-          - name: concerned_actions #TODO we can define each action
+          - name: concerned_actions 
             description: >
               The actions taken by endpoint to apply the configurations for malware
-            fields:
-            - name: ingest_malware_config
-              description: >
-                Ingest the malware config from the policy application
-              fields:
-              - name: status
-                description: >
-                  The status of this action
-                type: keyword
-                example: success
-              - name: message
-                description: >
-                  A message describing the status results
-                type: text
-                example: Malware mode: detect
-            fields:
-            - name: download_model 
-              description: >
-                Download the malware model
-              fields:
-              - name: status
-                description: >
-                  The status of this action
-                type: keyword
-                example: success
-              - name: message
-                description: >
-                  A message describing the status results
-                type: text
-                example: Successfully downloaded EXE model, FP list, and FN list
-            fields:
-            - name: configure_malware 
-              description: >
-                Download the malware model
-              fields:
-              - name: status
-                description: >
-                  The status of this action
-                type: keyword
-                example: success
-              - name: message
-                description: >
-                  A message describing the status results
-                type: text
-                example: Malware prevention enabled
-            fields:
-            - name: load_model 
-              description: >
-                Load the malware model
-              fields:
-              - name: status
-                description: >
-                  The status of this action
-                type: keyword
-                example: success
-              - name: message
-                description: >
-                  A message describing the status results 
-                type: text
-                example: Successfully loaded EXE model, FN list, and FP list 
-            #TODO Add the rest of the actions
-
+            type: keyword
+            example:
+              ingest_malware_config
+              download_model
         - name: eventing
           description: >
             The details of the application of the eventing configuration
@@ -161,12 +103,14 @@ fields:
               The status of the eventing configuration
             type: keyword
             example: failure
-          - name: concerned_actions #TODO we can define each action
+          - name: concerned_actions 
             description: >
               The actions taken by endpoint to apply the configurations for eventing
-            fields: #TODO add the rest of the actions.
-
-      - name: actions #TODO are there actions here worth showing that aren't applicable to any specific configuration?
+            type: keyword
+            example:
+              ingest_eventing_config
+              download_model
+      - name: actions
         description: >
           The list of all actions taken by the endpoint to apply this policy
         fields:
@@ -186,7 +130,6 @@ fields:
             example: version not verified
 
         #TODO add more actions, we can define each one
-
 
 - name: agent
   description: >

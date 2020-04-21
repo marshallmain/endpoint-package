@@ -73,6 +73,15 @@ fields:
         type: keyword
         example: c2a9093e-e289-4c0a-aa44-8c32a414fa7a
 
+      - name: status
+        description: >
+          The overall status of the policy
+        type: keyword
+        example:
+          success
+          warning
+          failed
+
       - name: response
         description: >
           The response of this instance of the policy application
@@ -89,7 +98,10 @@ fields:
               description: >
                 The status of the malware configuration
               type: keyword
-              example: failure
+              example:
+                success
+                warning
+                failed
             - name: concerned_actions 
               description: >
                 The actions taken by endpoint to apply the configurations for malware
@@ -105,7 +117,10 @@ fields:
               description: >
                 The status of the eventing configuration
               type: keyword
-              example: failure
+              example:
+                success
+                warning
+                failed
             - name: concerned_actions 
               description: >
                 The actions taken by endpoint to apply the configurations for eventing
@@ -125,7 +140,10 @@ fields:
               description: >
                 The status of this action
               type: keyword
-              example: success
+              example:
+                success
+                warning
+                failed
             - name: message
               description: >
                 A message describing the status results

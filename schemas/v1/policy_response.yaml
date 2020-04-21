@@ -56,80 +56,83 @@ fields:
   fields:
   - name: policy
     description: >
-      The policy fields are used to hold information about applied policy.
+      The policy fields are used to hold information about applied policies.
     fields:
-    - name: id
+    - name: applied
       description: >
-        The unique identifier of the policy
-      type: keyword
-      example: c2a9093e-e289-4c0a-aa44-8c32a414fa7a
-
-    - name: version
-      description: >
-        The revision of the policy
-      type: keyword
-      example: c2a9093e-e289-4c0a-aa44-8c32a414fa7a
-
-    - name: response
-      description: >
-        The response of this instance of the policy application
-      fields:
-      - name: configurations
+        Information about the applied policy
+      - name: id
         description: >
-          The list of configurations that were set by this policy application
-        fields:
-        - name: malware
-          description: >
-            The details of the application of the malware configuration
-          fields:
-          - name: status
-            description: >
-              The status of the malware configuration
-            type: keyword
-            example: failure
-          - name: concerned_actions 
-            description: >
-              The actions taken by endpoint to apply the configurations for malware
-            type: keyword
-            example:
-              ingest_malware_config
-              download_model
-        - name: eventing
-          description: >
-            The details of the application of the eventing configuration
-          fields:
-          - name: status
-            description: >
-              The status of the eventing configuration
-            type: keyword
-            example: failure
-          - name: concerned_actions 
-            description: >
-              The actions taken by endpoint to apply the configurations for eventing
-            type: keyword
-            example:
-              ingest_eventing_config
-              download_model
-      - name: actions
-        description: >
-          The list of all actions taken by the endpoint to apply this policy
-        fields:
-        - name: version_check
-          description: >
-            A version check for the policy
-          fields:
-          - name: status
-            description: >
-              The status of this action
-            type: keyword
-            example: success
-          - name: message
-            description: >
-              A message describing the status results
-            type: text
-            example: version not verified
+          The unique identifier of the policy
+        type: keyword
+        example: c2a9093e-e289-4c0a-aa44-8c32a414fa7a
 
-        #TODO add more actions, we can define each one
+      - name: version
+        description: >
+          The revision of the policy
+        type: keyword
+        example: c2a9093e-e289-4c0a-aa44-8c32a414fa7a
+
+      - name: response
+        description: >
+          The response of this instance of the policy application
+        fields:
+        - name: configurations
+          description: >
+            The list of configurations that were set by this policy application
+          fields:
+          - name: malware
+            description: >
+              The details of the application of the malware configuration
+            fields:
+            - name: status
+              description: >
+                The status of the malware configuration
+              type: keyword
+              example: failure
+            - name: concerned_actions 
+              description: >
+                The actions taken by endpoint to apply the configurations for malware
+              type: keyword
+              example:
+                ingest_malware_config
+                download_model
+          - name: eventing
+            description: >
+              The details of the application of the eventing configuration
+            fields:
+            - name: status
+              description: >
+                The status of the eventing configuration
+              type: keyword
+              example: failure
+            - name: concerned_actions 
+              description: >
+                The actions taken by endpoint to apply the configurations for eventing
+              type: keyword
+              example:
+                ingest_eventing_config
+                download_model
+        - name: actions
+          description: >
+            The list of all actions taken by the endpoint to apply this policy
+          fields:
+          - name: version_check
+            description: >
+              A version check for the policy
+            fields:
+            - name: status
+              description: >
+                The status of this action
+              type: keyword
+              example: success
+            - name: message
+              description: >
+                A message describing the status results
+              type: text
+              example: version not verified
+
+          #TODO this list of actions should be permissive as the actions taken can change rapidly.
 
 - name: agent
   description: >

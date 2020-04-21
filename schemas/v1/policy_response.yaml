@@ -109,7 +109,7 @@ fields:
               example:
                 ingest_malware_config
                 download_model
-          - name: eventing
+          - name: events
             description: >
               The details of the application of the eventing configuration
             fields:
@@ -128,6 +128,44 @@ fields:
               example:
                 ingest_eventing_config
                 download_model
+          - name: logging
+            description: >
+              The details of the application of the logging configuration
+            fields:
+            - name: status
+              description: >
+                The status of the eventing configuration
+              type: keyword
+              example:
+                success
+                warning
+                failed
+            - name: concerned_actions 
+              description: >
+                The actions taken by endpoint to apply the configurations for logging
+              type: keyword
+              example:
+                load_config
+                configure_logging
+          - name: streaming
+            description: >
+              The details of the application of the streaming configuration
+            fields:
+            - name: status
+              description: >
+                The status of the eventing configuration
+              type: keyword
+              example:
+                success
+                warning
+                failed
+            - name: concerned_actions 
+              description: >
+                The actions taken by endpoint to apply the configurations for streaming
+              type: keyword
+              example:
+                load_config
+                read_elasticsearch_config
         - name: actions
           description: >
             The list of all actions taken by the endpoint to apply this policy

@@ -71,7 +71,7 @@ fields:
         description: >
           The revision of the policy
         type: keyword
-        example: c2a9093e-e289-4c0a-aa44-8c32a414fa7a
+        example: 1.0.0 
 
       - name: status
         description: >

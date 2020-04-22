@@ -274,6 +274,12 @@ fields:
       Unique identifier of this elastic endpoint agent (if one exists).
     type: keyword
     example: 8a4f500d
+  - name: type
+    description: >
+      Endpoint.
+    type: keyword
+    example: endpoint
+
   - name: build
     description: >
       Build info for the endpoint

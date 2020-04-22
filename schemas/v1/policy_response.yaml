@@ -54,6 +54,75 @@ fields:
   description: >
     The endpoint fields are used for custom information about the endpoint.
   fields:
+  - name: artifacts
+    description: >
+      The artifacts that the endpoint has downloaded and applied with the policy
+    fields:
+      - name: global-manifest
+        description: >
+          Global manifest artifact
+        fields:
+        - name: version
+          description: >
+            The version of the global manifest
+          type: keyword
+          example:
+            1.0.0
+        - name: sha256
+          description: >
+            The hash of the artifact
+          type: keyword
+          example:
+            5e7c4d821aae015726bb05abdb2b30b8e87cce39a83115425e642a3ab9fe262b
+      - name: endpointpe-v4-windows
+        description: >
+          Artifact for Windows endpoint model
+        fields:
+        - name: version
+          description: >
+            The version of the Windows endpoint modelt
+          type: keyword
+          example:
+            1.0.0
+        - name: sha256
+          description: >
+            The hash of the artifact
+          type: keyword
+          example:
+            5e7c4d821aae015726bb05abdb2b30b8e87cce39a83115425e642a3ab9fe262b
+      - name: user-whitelist-windows
+        description: >
+          Artifact for the User whitelist
+        fields:
+        - name: version
+          description: >
+            The version of the User whitelist
+          type: keyword
+          example:
+            1.0.0
+        - name: sha256
+          description: >
+            The hash of the artifact
+          type: keyword
+          example:
+            5e7c4d821aae015726bb05abdb2b30b8e87cce39a83115425e642a3ab9fe262b
+      - name: global-whitelist-windows
+        description: >
+          Artifact for the global  whitelist
+        fields:
+        - name: version
+          description: >
+            The version of the global whitelist
+          type: keyword
+          example:
+            1.0.0
+        - name: sha256
+          description: >
+            The hash of the artifact
+          type: keyword
+          example:
+            5e7c4d821aae015726bb05abdb2b30b8e87cce39a83115425e642a3ab9fe262b
+
   - name: policy
     description: >
       The policy fields are used to hold information about applied policies.
@@ -80,7 +149,7 @@ fields:
         example:
           success
           warning
-          failed
+          failure
 
       - name: response
         description: >
@@ -101,7 +170,7 @@ fields:
               example:
                 success
                 warning
-                failed
+                failure
             - name: concerned_actions 
               description: >
                 The actions taken by endpoint to apply the configurations for malware
@@ -120,7 +189,7 @@ fields:
               example:
                 success
                 warning
-                failed
+                failure
             - name: concerned_actions 
               description: >
                 The actions taken by endpoint to apply the configurations for eventing
@@ -139,7 +208,7 @@ fields:
               example:
                 success
                 warning
-                failed
+                failure
             - name: concerned_actions 
               description: >
                 The actions taken by endpoint to apply the configurations for logging
@@ -158,7 +227,7 @@ fields:
               example:
                 success
                 warning
-                failed
+                failure
             - name: concerned_actions 
               description: >
                 The actions taken by endpoint to apply the configurations for streaming
@@ -181,7 +250,7 @@ fields:
               example:
                 success
                 warning
-                failed
+                failure
             - name: message
               description: >
                 A message describing the status results

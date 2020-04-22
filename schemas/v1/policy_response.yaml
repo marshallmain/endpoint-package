@@ -274,4 +274,14 @@ fields:
       Unique identifier of this elastic endpoint agent (if one exists).
     type: keyword
     example: 8a4f500d
+  - name: build
+    description: >
+      Build info for the endpoint
+    fields:
+      - name: original
+        description: >
+          Extended build info for the endpoint
+        type: keyword
+        example:
+          metricbeat version 7.6.0 (amd64), libbeat 7.6.0 [6a23e8f8f30f5001ba344e4e54d8d9cb82cb107c built 2020-02-05 23:10:10 +0000 UTC]
   

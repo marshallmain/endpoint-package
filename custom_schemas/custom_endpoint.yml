@@ -12,13 +12,6 @@
       type: object
       description: The policy fields are used to hold information about applied policy.
 
-    - name: policy.id
-      level: custom
-      type: keyword
-      description: >
-        ID of the policy that was active when the event was created.
-      example: c2a9093e-e289-4c0a-aa44-8c32a414fa7a
-
     - name: policy.applied
       level: custom
       type: object
@@ -244,6 +237,11 @@
       level: custom
       type: object
       description: Extended "process" field set
+
+    - name: process.ancestry
+      level: custom
+      type: keyword
+      description: An array of entity_ids indicating the ancestors for this event
 
     - name: process.authentication_id
       level: custom
@@ -493,24 +491,6 @@
         Leave unpopulated if the validity or trust of the certificate was unchecked.
       example: ERROR_UNTRUSTED_ROOT
 
-    - name: artifact.name
-      level: custom
-      type: keyword
-      description: >
-        Name of artifact in use by endpoint when event was created.
-
-    - name: artifact.version
-      level: custom
-      type: keyword
-      description: >
-        Version of artifact in use by endpoint when event was created.
-
-    - name: artifact.hash
-      level: custom
-      type: keyword
-      description: >
-        Hash of artifact in use by endpoint when event was created.
-
     - name: system
       level: custom
       type: object
@@ -626,21 +606,6 @@
       level: custom
       type: keyword
       description: DNS options field, uint64, representing as a keyword to avoid overflows in ES
-
-    - name: event
-      level: custom
-      type: object
-      description: Custom fields relating to event information
-
-    - name: event.process
-      level: custom
-      type: object
-      description: Custom process information relating to the event
-
-    - name: event.process.ancestry
-      level: custom
-      type: keyword
-      description: An array of entity_ids indicating the ancestors for this event
 
     - name: dll.code_signature
       level: custom
